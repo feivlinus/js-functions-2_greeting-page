@@ -24,10 +24,40 @@ const display = document.querySelector('[data-js="display"]');
 
 function getGreeting() {
   // Code here
+  const dateHourNow = new Date().getHours();
+
+  if (dateHourNow >= 6 && dateHourNow <= 12) {
+    return "Good Morning";
+  }
+
+  if (dateHourNow >= 13 && dateHourNow <= 18) {
+    return "Good Afternoon";
+  }
+
+  if (dateHourNow >= 19 && dateHourNow <= 22) {
+    return "Good Evening";
+  }
+
+  if (dateHourNow >= 23 && dateHourNow <= 5) {
+    return "Good Night";
+  }
 }
 
 function getDayColor() {
   // Code here
+  const weekDay = new Date().getDay();
+
+  if (weekDay === 1) {
+    return "darkgray";
+  }
+
+  if (weekDay >= 2 && weekDay <= 5) {
+    return "lightblue";
+  }
+
+  if (weekDay >= 6 && weekDay <= 7) {
+    return "hotpink";
+  }
 }
 
 display.textContent = getGreeting();
